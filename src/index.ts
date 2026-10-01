@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import { Command } from "commander";
-import { z } from "zod";
+import { Command } from 'commander';
+import { z } from 'zod';
 
 const program = new Command();
 
@@ -10,17 +10,19 @@ const optionsSchema = z.object({
 });
 
 program
-  .name("ctxt-pipe")
-  .description("Compose files, commands, and instructions into structured context for LLMs")
-  .version("0.1.0")
-  .option("-v, --verbose", "enable verbose output");
+  .name('ctxt-pipe')
+  .description(
+    'Compose files, commands, and instructions into structured context for LLMs',
+  )
+  .version('0.1.0')
+  .option('-v, --verbose', 'enable verbose output');
 
 program.parse();
 
 const options = optionsSchema.parse(program.opts());
 
 if (options.verbose) {
-  console.error("Verbose mode enabled");
+  console.error('Verbose mode enabled');
 }
 
-console.log("ctxt-pipe");
+console.log('ctxt-pipe');
