@@ -2,6 +2,7 @@
 
 import { Command } from 'commander';
 import { z } from 'zod';
+import { create } from 'xmlbuilder2';
 
 const program = new Command();
 
@@ -10,7 +11,7 @@ const optionsSchema = z.object({
 });
 
 program
-  .name('ctxt-pipe')
+  .name('contextd')
   .description(
     'Compose files, commands, and instructions into structured context for LLMs',
   )
@@ -24,5 +25,3 @@ const options = optionsSchema.parse(program.opts());
 if (options.verbose) {
   console.error('Verbose mode enabled');
 }
-
-console.log('ctxt-pipe');

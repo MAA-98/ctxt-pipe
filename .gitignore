@@ -1,11 +1,15 @@
 # OS
 .DS_Store
 
-# TreeNode
-node_modules/
+# IDE
+.idea/
+.vscode/
 
 # Build output
 dist/
+node_modules/
 
 # TypeScript
 *.tsbuildinfo
+
+context.json
